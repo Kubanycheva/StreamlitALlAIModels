@@ -1,5 +1,5 @@
 import streamlit as st
-from all_app.image.endpoints import mnist, fashion_mnist, cifar100
+from all_app.image.endpoints import mnist, fashion_mnist, cifar100, group_image
 from all_app.audio.endpoints import gtzan, urban, speech
 from all_app.text.endpoints import news
 
@@ -7,7 +7,7 @@ st.title('Welcome')
 
 with st.sidebar:
     st.header('Menu')
-    name = st.radio('Выбери', ['Gtzan', 'Speech', 'Urban', 'Cifar100', 'Mnist', 'Fashion-Mnist', 'Ag-News'])
+    name = st.radio('Выбери', ['Gtzan', 'Speech', 'Urban', 'Cifar100', 'Mnist', 'Fashion-Mnist', 'Ag-News', 'Group-Image'])
 
 if name == 'Mnist':
     mnist.mnist_predict()
@@ -23,3 +23,5 @@ elif name == 'Speech':
     speech.speech_predict()
 elif name == 'Ag-News':
     news.news_predict()
+elif name == 'Group-Image':
+    group_image.group_predict()
